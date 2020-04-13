@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript 2020 New Feature</title>
+	<script type="text/javascript" src="./es2020.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+	* {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+    min-height: 100%;
+}
+html{
+	height: 100%;
+}
+</style>
+
+</head>
+<body class="bg-dark">
+	<div class="jumbotron bg-dark" style="color: white;text-align: center;">
+		<h1 class="display-4">New EchmaScript 2020 Features</h1>
+		<img src="./logo.png" style="height: 150px;"/>
+		<p class="lead">This site is about new javascript Feature in 2020 Including</p>
+		<hr/>
+		<p>Optional Chaining Operator</p>
+		<textarea rows="6" cols="50" readonly>
+console.log("Optional Chaining Operator");
+const obj = {
+  prop1: {
+    prop2: {
+      prop3: {
+        prop4: {
+          prop5: 5
+        }
+      }
+    }
+  }
+}
+console.log(obj?.prop1?.prop2?.prop3?.prop4?.prop5);
+</textarea>
+		<p>Go To Console Log To See The Result</p>
+		<hr/>
+		<p>Nullish Coalescing Operator</p>
+		<textarea rows="6" cols="50" readonly>
+console.log("Nullish Coalescing Operator");
+const x = null;
+const y = x ?? 500;
+console.log(y); // 500
+const n = 0
+const m = n ?? 9000;
+console.log(m) // 0
+</textarea>
+		<p>Results</p>
+		<p id="NullishY"></p>
+		<p id="NullishX"></p>
+		<hr/>
+		<p>BigInt</p>
+		<textarea rows="6" cols="50" readonly>
+console.log("BigInt");
+const bigInt = BigInt('22222222222222222222222222222222222222222222222222222222222222222222222222222222222');
+console.log(bigInt);
+const bigHex = BigInt("0x1fffffffffffff111111111");
+console.log(bigHex);
+</textarea>
+		<p>Results</p>
+		<p id="bigint"></p>
+		<p id="bighex"></p>
+		<hr/>
+		<p>promises.allsettled</p>
+		<textarea rows="6" cols="50" readonly>
+console.log("promises.allsettled");
+const p1 = new Promise((res, rej) => setTimeout(res, 1000));
+
+const p2 = new Promise((res, rej) => setTimeout(rej, 1000));
+
+Promise.allSettled([p1, p2]).then(data => console.log(data));
+</textarea>
+		<p>Go To Console Log To See The Result</p>
+		<hr/>
+		<p class="lead">
+		  <a class="btn btn-primary btn-lg" href="#" role="button">Visit GitHub</a>
+		</p>
+	  </div>
+	 	<script type="text/javascript">
+	 		document.getElementById("NullishX").innerHTML = m;
+	 		document.getElementById("NullishY").innerHTML = y;
+	 		document.getElementById("bigint").innerHTML=bigInt;
+	 		document.getElementById("bighex").innerHTML=bigHex;
+	 	</script>
+	 	<footer><p style="color: white;text-align: center;">Made by chrysna</p></footer>
+</body>
+</html>
